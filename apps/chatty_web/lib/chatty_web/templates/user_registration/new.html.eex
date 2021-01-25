@@ -1,26 +1,40 @@
-<h1>Register</h1>
+<div class="container block mx-auto max-w-xl">
+  <%= form_for @changeset, Routes.user_registration_path(@conn, :create), [class: "container max-w-3x1 mx-auto"], fn f -> %>
+    <%= if @changeset.action do %>
+      <div class="alert alert-danger">
+        <p>Oops, something went wrong! Please check the errors below.</p>
+      </div>
+    <% end %>
 
-<%= form_for @changeset, Routes.user_registration_path(@conn, :create), fn f -> %>
-  <%= if @changeset.action do %>
-    <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
+    <h1 class="text-3xl text-gray-900 font-bold">Register</h1>
+
+    <div class="mt-4 shadow sm:rounded-md sm:overflow-hidden">
+      <div class="bg-white space-y-6 sm:p-6 px-8 py-6">
+        <div class="grid grid-cols-2 gap-6">
+
+          <div class="col-span-3 sm:col-span-2">
+            <%= label f, :email, class: "label" %>
+            <%= email_input f, :email, required: true, autocomplete: "off", placeholder: "name@example.com", class: "input"%>
+            <%= error_tag f, :email %>
+          </div>
+
+          <div class="col-span-3 sm:col-span-2">
+            <%= label f, :password, class: "label" %>
+            <%= password_input f, :password, autocomplete: "off", type: "password", class: "input"%>
+            <%= error_tag f, :password %>
+          </div>
+
+          <div class="col-span-2">
+            <%= submit "Sign up", phx_disable_with: "Signin up...", class: "btn-block w-1/2 mx-auto" %>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   <% end %>
 
-  <%= label f, :email %>
-  <%= email_input f, :email, required: true %>
-  <%= error_tag f, :email %>
-
-  <%= label f, :password %>
-  <%= password_input f, :password, required: true %>
-  <%= error_tag f, :password %>
-
-  <div>
-    <%= submit "Register" %>
-  </div>
-<% end %>
-
-<p>
-  <%= link "Log in", to: Routes.user_session_path(@conn, :new) %> |
-  <%= link "Forgot your password?", to: Routes.user_reset_password_path(@conn, :new) %>
-</p>
+  <p class="text-center mt-3 text-sm text-indigo-900">
+    <%= link "Log in", to: Routes.user_session_path(@conn, :new), class: "link" %> |
+    <%= link "Forgot your password?", to: Routes.user_reset_password_path(@conn, :new), class: "link" %>
+  </p>
+</div>
