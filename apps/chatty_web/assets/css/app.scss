@@ -1,12 +1,13 @@
 /* This file is for your main application css. */
 /* @TODO Remove phoenix.css */
-@import "./phoenix.css";
 @import "../node_modules/nprogress/nprogress.css";
 
 /* Not using @tailwindcss directive because @apply breaks without postcss-import plugin */
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
 
 /* LiveView specific classes for your customizations */
 .phx-no-feedback.invalid-feedback,

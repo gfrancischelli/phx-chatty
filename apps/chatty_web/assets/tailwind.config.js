@@ -5,7 +5,11 @@ module.exports = {
     "../lib/**/*.eex",
     "./js/**/*.js",
   ],
-  theme: {},
+  theme: {
+    fontFamily: {
+      sans: ["Inter", "sans-serif"],
+    },
+  },
   variants: {},
   plugins: [],
 };
