@@ -1,5 +1,21 @@
 # WORKLOG
 
+## 25/01/2021
+
+### Intentions
+
+- Setting up phx.gen.auth
+- Start learning/using liveview
+- Style the authentication pages
+
+### Log
+
+- I've setup the authentication with `phx.gen.auth`. Now I'm creating the frontend with LiveView
+- Started doing the authentication frontend using `LiveView`. Nearly the end, I discovered it [isn't a good ideia](https://elixirforum.com/t/how-to-manage-session-state-with-live-view/21196/17), since the session can't be edited from `handle_events()`
+- Using tailwindcss is really fast to make things look good. Also fun.
+- Learned about the phoenix view form helpers. Neat way to deliver validation messages.
+- Register and Log in pages are styled. They are _very_ similar, wonder if there is a neat way to componentize those styles so I shouldn't have to edit both files when something changes
+
 ## 24/01/2021
 
 Yey first commit 🚀
