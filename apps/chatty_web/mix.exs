@@ -37,6 +37,7 @@ defmodule ChattyWeb.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:phx_gen_auth, "~> 0.6", only: [:dev], runtime: false},
       {:phoenix, "~> 1.5.6"},
       {:phoenix_ecto, "~> 4.0"},
       {:phoenix_live_view, "~> 0.14.6"},
